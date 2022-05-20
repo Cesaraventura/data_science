@@ -74,3 +74,14 @@ plt.title("histograma das medias dos filmes")
 # tmdb.query("original_language != 'en'")
 # tmdb.query("original_language != 'en'").original_language.value_counts()
 # sns.catplot(x = "original_language", data = filmes_sem_lingua_original_em_ingles, kind="count")
+
+# OUTRO TIPO DE GRÁFICO
+sns.set(style="ticks")
+
+# Load the example dataset for Anscombe's quartet
+df = sns.load_dataset("anscombe")
+
+# Show the results of a linear regression within each dataset
+sns.lmplot(x="x", y="y", col="dataset", hue="dataset", data=df,
+           col_wrap=2, ci=None, palette="muted", height=4,
+           scatter_kws={"s": 50, "alpha": 1})
